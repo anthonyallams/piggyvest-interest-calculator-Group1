@@ -38,7 +38,9 @@ ul.navbar-nav .nav-button {
   color: white;
   background: #083e9e;
 }
-
+.nav-link:hover{
+  color: #30c57b;
+}
 /*Section 1*/
 .section-1 img {
   width: 100%;
@@ -89,8 +91,9 @@ ul.navbar-nav .nav-button {
 }
 
 .section-2 a:hover {
-  background-color: #0b7b43;
-  color: white;
+  background-color:transparent;
+  color: blue;
+  border: blue 1px solid;
 }
 
 /*Section 3*/
