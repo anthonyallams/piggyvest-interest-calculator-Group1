@@ -1,92 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
 
-    <script
-      src="https://kit.fontawesome.com/55b74517c6.js"
-      crossorigin="anonymous"
-    ></script>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
-      crossorigin="anonymous"
-    />
+    <script src="https://kit.fontawesome.com/55b74517c6.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
     <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
+</head>
+
+<body>
     <nav class="navbar navbar-expand-lg sticky-top navbar-light">
-      <a class="navbar-brand" href="#"
-        ><img src="./assests/Img/logo.png" alt="logo" width="150"
-      /></a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
+        <a class="navbar-brand" href="#"><img src="./assests/Img/logo.png" alt="logo" width="150" /></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="#"
-              >About <span class="sr-only">(current)</span></a
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About <span class="sr-only">(current)</span></a
             >
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Stories</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">FAQ</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Blog</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Login</a>
-          </li>
-          <li>
-            <a class="nav-button nav-link" href="#">Create a Free Account</a>
-          </li>
-        </ul>
-      </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">FAQ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Login</a>
+                </li>
+                <li>
+                    <a class="nav-button nav-link" href="#">Create a Free Account</a>
+                </li>
+            </ul>
+        </div>
     </nav>
 
     <!-- Section 1 -->
 
     <div class="section-1 container">
-      <h3 class="header">Estimate your investment growth over time</h3>
-      <div class="row">
-        <div class="col-md-6">
-          <img src="./assests/Img/image-1.png" alt="" />
-        </div>
-        <div class="col-md-6 side-content">
-          <h1 class="h1-interest"></h1>
-          <form class="form">
-            <div class="first-element"></div>
-            <div class="form-group">
-              <label>Amount to lock</label>
-              <input
-                type="number"
-                class="form-control amount"
-                placeholder="Enter amount to lock"
-              />
+        <h3 class="header">Estimate your investment growth over time</h3>
+        <div class="row">
+            <div class="col-md-6">
+                <img src="./assests/Img/image-1.png" alt="" />
             </div>
-            <div class="form-group">
-              <label>Duration</label>
-              <select class="form-control duration">
+            <div class="col-md-6 side-content">
+                <h1 class="h1-interest"></h1>
+                <form class="form">
+                    <div class="first-element"></div>
+                    <div class="form-group">
+                        <label>AMOUNT TO LOCK</label>
+                        <input type="number" class="form-control amount" placeholder="Enter amount to lock" />
+                    </div>
+                    <div class="form-group">
+                        <label>DURATION</label>
+                        <select class="form-control duration">
                 <option>Select duration of lock</option>
                 <option value="6">10 - 30 days @6% annum</option>
                 <option value="8">31 - 60 days @8% annum</option>
@@ -94,140 +70,120 @@
                 <option value="13">91 days to 2 years @13% annum</option>
                 <option value="40">Over 2 years @40% annum</option>
               </select>
+                    </div>
+                    <div class="form-group">
+                        <label>INTEREST</label>
+                        <input type="number" class="form-control interest" placeholder="Your Interest" disabled />
+                    </div>
+                    <button class="submit btn btn-primary">CALCULATE INTERESTS</button>
+                </form>
+                <!-- Spinning Loader -->
+                <div class="loader">
+                    <img src="assests/Img/spinner.gif" alt="loader" class="spinner" />
+                </div>
+                <!-- Show balance and calculate result -->
+                <div class="balance">
+                    <p>Estimated Balance</p>
+                    <h4>&#8358;<span class="results"></span></h4>
+                </div>
             </div>
-            <div class="form-group">
-              <label>Interest</label>
-              <input
-                type="number"
-                class="form-control interest"
-                placeholder="Your Interest"
-                disabled
-              />
-            </div>
-            <button class="submit btn btn-primary">Calculate Interest</button>
-          </form>
-          <!-- Spinning Loader -->
-          <div class="loader">
-            <img src="assests/Img/spinner.gif" alt="loader" class="spinner" />
-          </div>
-          <!-- Show balance and calculate result -->
-          <div class="balance">
-            <p>Estimated Balance</p>
-            <h4>&#8358;<span class="results"></span></h4>
-          </div>
         </div>
-      </div>
     </div>
 
     <!-- Section 2 -->
     <div class="section-2 container">
-      <h3>How does the calculator work</h3>
-      <div class="row">
-        <div class="col-md-6">
-          <img src="./assests/Img/image-2.png" alt="" />
+        <h3>How does the calculator work</h3>
+        <div class="row">
+            <div class="col-md-6">
+                <img src="./assests/Img/image-2.png" alt="" />
+            </div>
+            <div class="col-md-6 side-content">
+                <p>
+                    Use our "SafeLock" feature to lock funds away so you don't have access until your set date. You also earn over 13% p.a.
+                </p>
+                <a>Create a Free Account</a>
+            </div>
         </div>
-        <div class="col-md-6 side-content">
-          <p>
-            Use our "SafeLock" feature to lock funds away so you don't have
-            access until your set date. You also earn over 13% p.a.
-          </p>
-          <a>Create a Free Account</a>
-        </div>
-      </div>
     </div>
 
     <!-- Section 3 -->
     <div class="section-3 container">
-      <h3>Over ₦1,000,000,000 securely saved every month</h3>
-      <p>
-        PiggyVest uses bank-level security measures to keep your data safe.
-        PiggyVest users save & invest well over a billion every single month,
-        and they are just getting started.
-      </p>
-      <a>Create Account for Free</a>
-      <div class="row app-download">
-        <div class="col-6 ios-badge">
-          <img src="./assests/Img/ios-badge.png" alt="" />
+        <h3>Over ₦1,000,000,000 securely saved every month</h3>
+        <p>
+            PiggyVest uses bank-level security measures to keep your data safe. PiggyVest users save & invest well over a billion every single month, and they are just getting started.
+        </p>
+        <a>Create Account for Free</a>
+        <div class="row app-download">
+            <div class="col-6 ios-badge">
+                <img src="./assests/Img/ios-badge.png" alt="" />
+            </div>
+            <div class="col-6 google-play-badge">
+                <img src="./assests/Img/google-play-badge.png" alt="" />
+            </div>
         </div>
-        <div class="col-6 google-play-badge">
-          <img src="./assests/Img/google-play-badge.png" alt="" />
-        </div>
-      </div>
     </div>
 
     <!-- Footer -->
     <footer class="container-fluid footer">
-      <div class="logo">
-        <img src="./assests/Img/logo.png" alt="logo" width="150" />
-      </div>
-      <div class="row footer-body">
-        <div class="col-md-7">
-          <div class="info">
-            <p>
-              PiggyVest (formerly piggybank.ng) is the largest online savings &
-              investing platform in Nigeria. For over 4 years, our customers
-              have saved and invested billions of Naira that they would normally
-              be tempted to spend.
-            </p>
-            <p>
-              Office: Tesmot House, 3 Abdulrahman Okene Close, off Ligali
-              Ayorinde Street, Victoria Island, Lagos.
-            </p>
-            <p>
-              0700 933 933 933 (Mon-Fri from 9am-5pm) - contact@piggyvest.com
-            </p>
-            <p>&copy; 2016 - 2020 PiggyTech Global Limited - RC 1405222</p>
-          </div>
+        <div class="logo">
+            <img src="./assests/Img/logo.png" alt="logo" width="150" />
         </div>
-        <div class="col-md-5">
-          <div class="row">
-            <div class="col-6">
-              <ul class="quick-links">
-                <li><h5>Quick Links</h5></li>
-                <li>AutoSave &trade;</li>
-                <li>PiggyLink</li>
-                <li>Quick Save &trade;</li>
-                <li>SafeLock &trade;</li>
-                <li>Withdrawals & Breaking</li>
-                <li>Salary Management</li>
-              </ul>
+        <div class="row footer-body">
+            <div class="col-md-7">
+                <div class="info">
+                    <p>
+                        PiggyVest (formerly piggybank.ng) is the largest online savings & investing platform in Nigeria. For over 4 years, our customers have saved and invested billions of Naira that they would normally be tempted to spend.
+                    </p>
+                    <p>
+                        Office: Tesmot House, 3 Abdulrahman Okene Close, off Ligali Ayorinde Street, Victoria Island, Lagos.
+                    </p>
+                    <p>
+                        0700 933 933 933 (Mon-Fri from 9am-5pm) - contact@piggyvest.com
+                    </p>
+                    <p>&copy; 2016 - 2020 PiggyTech Global Limited - RC 1405222</p>
+                </div>
             </div>
-            <div class="col-6">
-              <ul class="company">
-                <li><h5>Company</h5></li>
-                <li>About</li>
-                <li>FAQ</li>
-                <li>Terms of Use</li>
-                <li>Privacy Policy</li>
-                <li class="social-links">
-                  <a
-                    ><i class="fa fa-facebook-official" aria-hidden="true"></i
+            <div class="col-md-5">
+                <div class="row">
+                    <div class="col-6">
+                        <ul class="quick-links">
+                            <li>
+                                <h5>Quick Links</h5>
+                            </li>
+                            <li>AutoSave &trade;</li>
+                            <li>PiggyLink</li>
+                            <li>Quick Save &trade;</li>
+                            <li>SafeLock &trade;</li>
+                            <li>Withdrawals & Breaking</li>
+                            <li>Salary Management</li>
+                        </ul>
+                    </div>
+                    <div class="col-6">
+                        <ul class="company">
+                            <li>
+                                <h5>Company</h5>
+                            </li>
+                            <li>About</li>
+                            <li>FAQ</li>
+                            <li>Terms of Use</li>
+                            <li>Privacy Policy</li>
+                            <li class="social-links">
+                                <a><i class="fa fa-facebook-official" aria-hidden="true"></i
                   ></a>
-                  <a><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
-                  <a><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                </li>
-              </ul>
+                                <a><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
+                                <a><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </footer>
 
-    <script
-      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-      integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     <script src="app.js"></script>
-  </body>
+</body>
+
 </html>
