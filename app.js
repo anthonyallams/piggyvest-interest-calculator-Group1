@@ -81,15 +81,15 @@ const syncValues = (e) => {
 
   let result = parseInt(e.target.value);
   // console.log(result);
-
+  console.log();
   interest.value = result;
 
   if (result === 6) {
     dnone.style.display = "block";
-    durationAmount.innerText = "days";
+    durationAmount.innerText = "DAYS";
   } else {
     dnone.style.display = "block";
-    durationAmount.innerText = "months";
+    durationAmount.innerText = "MONTHS";
   }
 };
 
