@@ -206,7 +206,8 @@ ul.navbar-nav .nav-button {
 }
 
 .balance,
-.loader {
+.loader,
+.dnone {
   display: none;
 }
 

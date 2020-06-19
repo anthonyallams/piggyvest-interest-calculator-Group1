@@ -44,9 +44,6 @@ const clearError = () => {
 let obj = {
   6: 0.082,
   8: 0.164,
-  10: 1,
-  13: 2,
-  40: 3,
 };
 
 // Function to Calculate the Loan and display result
@@ -72,12 +69,28 @@ const calculateResult = () => {
   }
 };
 
-// Function to sync duration to interest
+// Function to sync to sync and display the daily or monthly input
+// const syncDuration = (value) => {
+
+// };
+
+// Function to sync duration to interest and time
 const syncValues = (e) => {
-  const result = parseInt(e.target.value);
-  console.log(typeof result);
+  const dnone = document.querySelector(".dnone");
+  const durationAmount = document.querySelector(".duration-amount");
+
+  let result = parseInt(e.target.value);
+  // console.log(result);
 
   interest.value = result;
+
+  if (result === 6) {
+    dnone.style.display = "block";
+    durationAmount.innerText = "days";
+  } else {
+    dnone.style.display = "block";
+    durationAmount.innerText = "months";
+  }
 };
 
 // Event Listener
