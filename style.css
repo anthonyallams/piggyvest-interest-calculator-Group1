@@ -24,6 +24,13 @@ ul.navbar-nav {
 .navbar-light .navbar-nav .nav-link:hover {
   color: #062b6d;
 }
+#button {
+  border: none;
+}
+.collapse {
+  position: absolute;
+  right: 100px;
+}
 
 ul.navbar-nav .nav-button {
   min-width: 9.375rem;
@@ -38,7 +45,7 @@ ul.navbar-nav .nav-button {
   color: white;
   background: #083e9e;
 }
-.nav-link:hover{
+.nav-link:hover {
   color: #30c57b;
 }
 /*Section 1*/
@@ -91,7 +98,7 @@ ul.navbar-nav .nav-button {
 }
 
 .section-2 a:hover {
-  background-color:transparent;
+  background-color: transparent;
   color: blue;
   border: blue 1px solid;
 }
@@ -198,6 +205,31 @@ ul.navbar-nav .nav-button {
   color: #ea4f56;
 }
 
+@media screen and (min-width: 768px) {
+  .navbar ul li {
+    margin-left: 1rem;
+  }
+
+  .section-1 .side-content,
+  .section-2 .side-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .section-2 a {
+    margin: 0;
+  }
+
+  .section-3 p {
+    text-align: center;
+  }
+
+  .footer-body {
+    flex-direction: row;
+  }
+}
+
 /* Newly Added styles */
 .submit {
   margin: 5px auto;
@@ -228,29 +260,4 @@ ul.navbar-nav .nav-button {
 
 .naira {
   text-decoration: double line-through;
-}
-
-@media screen and (min-width: 768px) {
-  .navbar ul li {
-    margin-left: 1rem;
-  }
-
-  .section-1 .side-content,
-  .section-2 .side-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .section-2 a {
-    margin: 0;
-  }
-
-  .section-3 p {
-    text-align: center;
-  }
-
-  .footer-body {
-    flex-direction: row;
-  }
 }
