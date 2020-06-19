@@ -6,6 +6,7 @@ const balance = document.querySelector(".balance");
 const results = document.querySelector(".results");
 const loader = document.querySelector(".loader");
 const duration = document.querySelector(".duration");
+const durationAmountInput = document.querySelector(".durationAmountInput");
 
 // Function to Show spinner when user clicks "submit" button
 const showLoader = (e) => {
@@ -40,40 +41,6 @@ const clearError = () => {
   document.querySelector(".error").remove();
 };
 
-// Hardcoded values for the duration to interest rate ratio
-let obj = {
-  6: 0.082,
-  8: 0.164,
-};
-
-// Function to Calculate the Loan and display result
-const calculateResult = () => {
-  // User entered form details
-  const Principal = parseFloat(amount.value);
-  const Interest = parseFloat(interest.value / 100);
-  const Payment = parseFloat(obj[duration.value] * 12);
-  console.log(Payment);
-  // Check if the entered value is finite
-  if (isFinite(Principal)) {
-    let InterestOnPrincipal = (Principal * Interest).toFixed(2);
-    let totalPayment = Principal + Number(InterestOnPrincipal);
-
-    //Display
-    balance.style.display = "block";
-    results.innerText = totalPayment.toLocaleString("en", {
-      maximumFractionDigits: 2,
-    });
-    loader.style.display = "none";
-  } else {
-    showError("Please check your numbers");
-  }
-};
-
-// Function to sync to sync and display the daily or monthly input
-// const syncDuration = (value) => {
-
-// };
-
 // Function to sync duration to interest and time
 const syncValues = (e) => {
   const dnone = document.querySelector(".dnone");
@@ -90,6 +57,44 @@ const syncValues = (e) => {
   } else {
     dnone.style.display = "block";
     durationAmount.innerText = "MONTHS";
+  }
+};
+
+//function to get time based on durationAmountInput
+const convertInterestTime = (rate) => {
+  let result;
+  if (duration.value === 6) {
+    result = rate / 100 / 365;
+  } else {
+    result = rate / 100 / 12;
+  }
+  return result;
+};
+
+// Function to Calculate the Interest and display result
+const calculateResult = () => {
+  // User entered form details
+  const Principal = parseFloat(amount.value);
+  const Interest = parseFloat(convertInterestTime(interest.value));
+  const Time = parseFloat(durationAmountInput.value);
+
+  console.log("principal", typeof Principal);
+  console.log("interest", typeof Interest);
+  console.log("time", typeof Time);
+
+  // Check if the entered value is finite
+  if (isFinite(Principal) && isFinite(Time)) {
+    let InterestOnPrincipal = (Principal * Interest * Time).toFixed(2);
+    let totalPayment = Principal + Number(InterestOnPrincipal);
+
+    //Display
+    balance.style.display = "block";
+    results.innerText = totalPayment.toLocaleString("en", {
+      maximumFractionDigits: 2,
+    });
+    loader.style.display = "none";
+  } else {
+    showError("Please check your numbers and try again");
   }
 };
 
